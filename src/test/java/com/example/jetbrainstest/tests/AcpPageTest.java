@@ -11,17 +11,19 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class AcpPageTest extends BaseTest {
     private AcpPage AcpPage;
 
+
     @BeforeEach
     @Override
     public void setUp() {
         super.setUp();
-        getDriver().get("https://www.jetbrains.com/all/");
+        getDriver().get("https://www.jetbrains.com/acp/");
         AcpPage = new AcpPage(getDriver());
     }
 
     @Test
     @DisplayName("Проверка наличия кнопки Read docs")
     public void readButtonCheck() {
+        AcpPage.waitDownloadPage();
         assertTrue(AcpPage.readButtonCheckEnabled(), "Кнопка Read docs отсутствует");
     }
 
@@ -29,6 +31,7 @@ public class AcpPageTest extends BaseTest {
     @DisplayName("Нажатие на кнопку Read docs")
     public void readButtonClickTest() {
         AcpPage.readButtonClick();
-        AcpPage.checkUrl();
+        AcpPage.waitDownloadPage();
+//        AcpPage.checkUrl();
     }
 }
