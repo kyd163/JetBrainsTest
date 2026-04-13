@@ -14,7 +14,6 @@ public class AcpPageTest extends BaseTest {
 
     @BeforeEach
     @Override
-    @Step ("Переход на страницу ACP")
     public void setUp() {
         super.setUp();
         getDriver().get("https://www.jetbrains.com/acp/");
@@ -22,14 +21,12 @@ public class AcpPageTest extends BaseTest {
     }
 
     @Test
-    @Step("Проверка наличия кнопки Read docs")
     public void readButtonCheck() {
         AcpPage.waitDownloadPage();
         assertTrue(AcpPage.readButtonCheckEnabled(), "Кнопка Read docs отсутствует");
     }
 
     @Test
-    @Step("Нажатие на кнопку Read docs")
     public void readButtonClickTest() {
         AcpPage.readButtonClick();
         AcpPage.waitDownloadPage();
