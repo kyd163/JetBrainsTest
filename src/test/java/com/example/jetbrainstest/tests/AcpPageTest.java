@@ -1,9 +1,7 @@
 package com.example.jetbrainstest.tests;
 
 import com.example.jetbrainstest.pages.AcpPage;
-import io.qameta.allure.Step;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;

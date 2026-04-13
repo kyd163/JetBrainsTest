@@ -7,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.Duration;
@@ -29,19 +28,19 @@ public class AcpPage {
     }
 
     public boolean readButtonCheckEnabled() {
-        LOG.info("Кнопка активна");
+        LOG.infoWithScreenshot("Кнопка активна");
         return readButton.isEnabled();
     }
 
     public void readButtonClick() {
-        LOG.info("Клик по кнопке Read docs");
+        LOG.infoWithScreenshot("Клик по кнопке Read docs");
         acceptButton.click();
         waitDownloadPage();
         readButton.click();
     }
 
     public void waitDownloadPage() {
-        LOG.info("Ожидание элемента на странице");
+        LOG.infoWithScreenshot("Ожидание элемента на странице");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOf(readButton));
     }
