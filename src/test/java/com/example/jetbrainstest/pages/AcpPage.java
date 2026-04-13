@@ -18,7 +18,7 @@ public class AcpPage {
     @FindBy(xpath = "(//span[normalize-space()='Read docs'])[1]")
     public WebElement readButton;
 
-    @FindBy(xpath = "(//span[text()='Read docs'])[1]")
+    @FindBy(xpath = "(//span[text()='Read docs'])[3]")
     private WebElement acceptButton;
 
     public AcpPage(WebDriver driver) {

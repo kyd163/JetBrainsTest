@@ -1,12 +1,14 @@
 package com.example.jetbrainstest.tests;
 
+import com.example.jetbrainstest.MyExtension;
 import com.example.jetbrainstest.pages.AcpPage;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-
+@ExtendWith(MyExtension.class)
 public class AcpPageTest extends BaseTest {
     private AcpPage AcpPage;
 
