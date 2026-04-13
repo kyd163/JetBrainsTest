@@ -14,10 +14,12 @@ import java.time.Duration;
 public class AcpPage {
     private final Logger LOG = LoggerFactory.getLogger(AcpPage.class);
     WebDriver driver;
+
     @FindBy(xpath = "(//span[normalize-space()='Read docs'])[1]")
     public WebElement readButton;
-    @FindBy(xpath = "//*[@id=\"ch2-dialog\"]/div[3]/button[1]")
-            private WebElement acceptButton;
+
+    @FindBy(xpath = "(//span[text()='Read docs'])[1]")
+    private WebElement acceptButton;
 //    String acpUrl = "https://agentclientprotocol.com/get-started/introduction";
 
 
