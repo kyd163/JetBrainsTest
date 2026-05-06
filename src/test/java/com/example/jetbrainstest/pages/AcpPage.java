@@ -15,13 +15,13 @@ public class AcpPage {
     WebDriver driver;
     String acpUrl = "https://www.jetbrains.com/acp/";
 
-    @FindBy(xpath = "(//span[text()='Read docs'])[1]")
+    @FindBy(xpath = "(//a[@data-test='button'])[1]")
     public WebElement readFirstButton;
 
     @FindBy(xpath = "(//*[@id=\"ch2-dialog\"]//button[1]")
     private WebElement acceptButtonCookie;
 
-    @FindBy (xpath = "(//span[text()='Read docs'])[2]")
+    @FindBy (xpath = "(//span[@data-test=\"button__content\"])[4]")
     private WebElement readTwoButton;
 
     @FindBy (xpath = "//h4[text()='Junie by JetBrains']")
@@ -36,28 +36,31 @@ public class AcpPage {
     @FindBy(xpath = "//h3[contains(text(),'ACP + Deep Agents')]")
     private WebElement usingAcpButton;
 
-    @FindBy(xpath = "[class=\"btn\"]")
+    @FindBy(css = "a[data-test=\"blog-header-cta\"]")
     private WebElement exploreButton;
 
-    @FindBy(xpath = "//h3[contains(text(),'Cursor Joined the ACP Registry')]")
+    @FindBy(xpath = "//*[contains(@href,'cursor-joined')]")
     private WebElement cursorJoinedButton;
 
-    @FindBy(xpath = "//h3[contains(text(),'Koog x ACP')]")
+    @FindBy(xpath = "//*[contains(@href,'koog-x')]")
     private WebElement koogButton;
 
     @FindBy(xpath = "//button[@data-test='next-button']")
     private WebElement nextButton;
 
-    @FindBy(xpath = "//button[@aria-label='Play video']")
+    @FindBy(css = "button.video-player-with-overlay-button__player-button")
     private WebElement playButton;
+
+    @FindBy(css = "video[preload=\"metadata\"]")
+    private WebElement treadmilVideo;
 
     @FindBy (xpath = "//span[text()='United States']")
     private WebElement unitedStatesButton;
 
-    @FindBy (xpath = "//svg[@data-test='down-icon']")
+    @FindBy (css = "input[data-test=\"search-input\"]")
     private WebElement dropDown;
 
-    @FindBy (xpath = "//span[text()='Australia']")
+    @FindBy (xpath = "//span[text()='France']")
     private WebElement elementOfDropDown;
 
     @FindBy (css = "button.footer-choose-button")
@@ -65,8 +68,6 @@ public class AcpPage {
 
     @FindBy (xpath = "//span[text()='Australia']")
     private WebElement australiaButton;
-
-
 
     public AcpPage(WebDriver driver) {
         LOG.info("Инициализация драйвера");
@@ -81,7 +82,6 @@ public class AcpPage {
 
     public void readFirstButtonClick() {
         LOG.infoWithScreenshot("Нажатие на первую кнопку ReadDocs");
-//        acceptButtonCookie.click();
         myWait(10).visible(readFirstButton);
         readFirstButton.click();
     }
@@ -99,7 +99,6 @@ public class AcpPage {
 
     public void  readTwoButtonClick() {
         LOG.infoWithScreenshot("Нажатие на вторую кнопку ReadDocs");
-//        acceptButtonCookie.click();
         myWait(10).visible(readTwoButton);
         readTwoButton.click();
     }
@@ -137,20 +136,18 @@ public class AcpPage {
     public boolean usingAcpBlog(){
         LOG.infoWithScreenshot("Открытие блога UsingAcp и проверка видимости кнопки");
         usingAcpButton.click();
-        acceptButtonCookie.click();
-        myWait(10).visible(exploreButton);
         return exploreButton.isEnabled();
     }
 
     public void exploreButtonClick(){
         LOG.infoWithScreenshot("Нажатие на кнопку ExploreMore");
+        usingAcpButton.click();
         exploreButton.click();
     }
 
     public boolean cursorJoinedBlog (){
         LOG.infoWithScreenshot("Открытие блога CursorJoined и проверка видимости кнопки");
         cursorJoinedButton.click();
-        acceptButtonCookie.click();
         myWait(10).visible(exploreButton);
         return exploreButton.isDisplayed();
     }
@@ -158,8 +155,6 @@ public class AcpPage {
     public boolean koogBlog(){
         LOG.infoWithScreenshot("Открытие блога Koog и проверка видимости кнопки");
         koogButton.click();
-        acceptButtonCookie.click();
-        myWait(10).visible(exploreButton);
         return exploreButton.isEnabled();
     }
 
@@ -172,7 +167,7 @@ public class AcpPage {
     public boolean playVideo(){
         LOG.infoWithScreenshot("Запуск видео");
         playButton.click();
-        return playButton.isEnabled();
+        return treadmilVideo.isEnabled();
     }
 
     public boolean countryButton(){
