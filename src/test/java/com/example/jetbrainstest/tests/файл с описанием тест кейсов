@@ -1,0 +1,32 @@
+1)Проверка адреса страницы
+2)Кнопка ReadDocs
+	2.1 Наличие первой кнопки ReadDocs
+	2.2 Нажатие на первую кнопку ReadDocs
+	2.3 Наличие второй кнопки ReadDocs
+	2.4 Нажатие на вторую кнопку ReadDocs
+3) Кнопка Junie by JetBrains
+	3.1 Наличие кнопки Junie by JetBrains
+	3.2 Нажатие на кнопку Junie by JetBrains
+4) Кнопка Explore the full list
+	4.1 Наличие первой кнопки Explore the full list
+	4.2 Нажатие на первую кнопку Explore the full list
+	4.3 Наличие второй кнопки Explore the full list
+	4.4 Нажатие на вторую кнопку Explore the full list
+5) Блог UsingACP
+	5.1 Открытие UsingACP
+	5.2 Наличие кнопки ExploreMore
+6) Кнопка ExploreMore
+	6.1 Наличие кнопки ExploreMore
+	6.2 Нажатие на кнопку ExploreMore
+7) Блог CursorJoined
+	7.1 Открытие CursorJoined
+	7.2 Наличие кнопки ExploreMore
+8) Блог Koog
+	8.1 Открытие Koog
+	8.2 Наличие кнопки ExploreMore
+9) Переключение страниц (Иконка стрелочки)
+	9.1 Наличие иконки стрелочки
+	9.2 Нажатие на иконку
+10) Запуск Видео
+11) Иконка Country
+ 	11.1 Смена названия иконки, после изменения страны
